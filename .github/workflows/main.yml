@@ -1,15 +1,15 @@
 name: Renew Docker Images
 
-on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
 # on:
-#   schedule:
-#     - cron: "0 0 2 1 *"
-# permissions:
-#   contents: read
+#   push:
+#     branches: ["main"]
+#   pull_request:
+#     branches: ["main"]
+on:
+  schedule:
+    - cron: "0 0 2 1 *"
+permissions:
+  contents: read
 
 jobs:
   test:

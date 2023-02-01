@@ -1,13 +1,15 @@
-name: Deno
+name: Renew Docker Images
 
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-
-permissions:
-  contents: read
+# on:
+#   schedule:
+#     - cron: "0 0 2 1 *"
+# permissions:
+#   contents: read
 
 jobs:
   test:
@@ -19,3 +21,7 @@ jobs:
 
       - name: pull velor2012/lookbusy-arm
         run: docker pull velor2012/lookbusy-arm
+      - name: pull velor2012/lookbusy
+        run: docker pull velor2012/lookbusy     
+      - name: pull velor2012/robotimg
+        run: docker pull velor2012/robotimg

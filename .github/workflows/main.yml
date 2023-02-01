@@ -1,0 +1,13 @@
+on:
+  schedule:
+    - cron: "0 2 * * *"
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: pull velor2012/lookbusy-arm
+        run: docker pull velor2012/lookbusy-arm

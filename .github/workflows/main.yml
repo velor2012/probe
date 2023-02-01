@@ -1,13 +1,21 @@
+name: Deno
+
 on:
   push:
-    branches: [ master ]
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
 jobs:
-  build-and-deploy:
+  test:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+      - name: Setup repo
+        uses: actions/checkout@v3
+
       - name: pull velor2012/lookbusy-arm
         run: docker pull velor2012/lookbusy-arm
